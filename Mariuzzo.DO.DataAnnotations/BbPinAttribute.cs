@@ -17,12 +17,8 @@ namespace Mariuzzo.DO.DataAnnotations
         /// <returns><code>true</code> if the string value is a valid BlackBerry PIN number, otherwise <code>false</code>.</returns>
         public override bool IsValid(object value)
         {
-            if (!(value is string))
-            {
-                return false;
-            }
+            var str = value as string;
 
-            var str = (string)value;
             if (String.IsNullOrWhiteSpace(str))
             {
                 return false;

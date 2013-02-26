@@ -1,4 +1,4 @@
 Mariuzzo.DataAnnotations.DO
 ===========================
 
-Provides common validation attributes for Dominican Republic (DO).
+Provides common and useful validation attributes for Dominican Republic (DO).

@@ -8,8 +8,8 @@
     <ProjectGuid>{EA62A23F-540A-4A08-BF65-2B0E7D9571E6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Mariuzzo.DataAnnotations.DO</RootNamespace>
-    <AssemblyName>Mariuzzo.DataAnnotations.DO</AssemblyName>
+    <RootNamespace>Mariuzzo.DO.DataAnnotations</RootNamespace>
+    <AssemblyName>Mariuzzo.DO.DataAnnotations</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -32,6 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -40,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BbPinAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,11 +1,11 @@
 ﻿using System.Reflection;
 using System.Runtime.InteropServices;
 
-[assembly: AssemblyTitle("Mariuzzo.DataAnnotations.DO")]
+[assembly: AssemblyTitle("Mariuzzo.DO.DataAnnotations")]
 [assembly: AssemblyDescription("Provides common validation attributes for Dominican Republic (DO).")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Mariuzzo")]
-[assembly: AssemblyProduct("Mariuzzo.DataAnnotations.DO")]
+[assembly: AssemblyProduct("Mariuzzo.DO.DataAnnotations")]
 [assembly: AssemblyCopyright("Copyright © Rubens Mariuzzo 2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mariuzzo.DataAnnotations.DO", "Mariuzzo.DataAnnotations.DO\Mariuzzo.DataAnnotations.DO.csproj", "{EA62A23F-540A-4A08-BF65-2B0E7D9571E6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mariuzzo.DO.DataAnnotations", "Mariuzzo.DO.DataAnnotations\Mariuzzo.DO.DataAnnotations.csproj", "{EA62A23F-540A-4A08-BF65-2B0E7D9571E6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

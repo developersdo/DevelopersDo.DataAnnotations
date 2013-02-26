@@ -7,7 +7,7 @@
     <authors>$author$</authors>
     <owners>$author$</owners>
     <licenseUrl>http://opensource.org/licenses/MIT</licenseUrl>
-    <projectUrl>https://github.com/rmariuzzo/Mariuzzo.DataAnnotations.DO</projectUrl>
+    <projectUrl>https://github.com/rmariuzzo/Mariuzzo.DO.DataAnnotations</projectUrl>
     <iconUrl>https://gravatar.com/avatar/20fee7efb359b82fd41be7461fe51cd2?s=256</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>

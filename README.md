@@ -29,7 +29,7 @@ Validate a BlackBerry PIN.
 
 #### Example ####
 
-    [BbPinAttribute]
+    [BbPin]
     public String BbPin { get; set; }
 
 Do you want to contribute?

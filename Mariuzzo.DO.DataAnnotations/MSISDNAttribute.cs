@@ -23,12 +23,7 @@ namespace Mariuzzo.DO.DataAnnotations
         public override bool IsValid(object value)
         {
             var str = value as String;
-            if (str == null)
-            {
-                return true;
-            }
-
-            if (String.IsNullOrWhiteSpace(str))
+            if (String.IsNullOrEmpty(str))
             {
                 return true;
             }

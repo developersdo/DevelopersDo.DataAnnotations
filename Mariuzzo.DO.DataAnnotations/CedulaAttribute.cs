@@ -18,9 +18,9 @@ namespace Mariuzzo.DO.DataAnnotations
         public override bool IsValid(object value)
         {
             var str = value as String;
-            if (String.IsNullOrWhiteSpace(str))
+            if (String.IsNullOrEmpty(str))
             {
-                return false;
+                return true;
             }
 
             Regex regex = new Regex(@"(\d{3}\-\d{7}\-\d{1})|(\d{11})");

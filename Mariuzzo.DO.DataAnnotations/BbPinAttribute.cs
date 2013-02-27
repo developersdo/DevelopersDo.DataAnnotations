@@ -18,10 +18,9 @@ namespace Mariuzzo.DO.DataAnnotations
         public override bool IsValid(object value)
         {
             var str = value as string;
-
-            if (String.IsNullOrWhiteSpace(str))
+            if (String.IsNullOrEmpty(str))
             {
-                return false;
+                return true;
             }
 
             Regex regex = new Regex(@"^[\dA-Fa-f]{8}$");

@@ -1,28 +1,29 @@
 ﻿using System;
+using Mariuzzo.DO.DataAnnotations;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Mariuzzo.DO.DataAnnotations.Test
+namespace Mariuzzo.Do.DataAnnotations.Test
 {
     [TestClass]
-    public class MSISDNAttributeTest
+    public class CedulaAttributeTest
     {
         [TestMethod]
-        public void TestValidMSISDNs()
+        public void TestValidCedulas()
         {
-            var attr = new MSISDNAttribute();
-            Assert.IsTrue(attr.IsValid("8091234567"));
-            Assert.IsTrue(attr.IsValid("809-123-4567"));
+            var attr = new CedulaAttribute();
+            Assert.IsTrue(attr.IsValid("001-0068331-7"));
+            Assert.IsTrue(attr.IsValid("00100683317"));
             Assert.IsTrue(attr.IsValid(null));
             Assert.IsTrue(attr.IsValid(String.Empty));
         }
 
         [TestMethod]
-        public void TestInvalidMSISDNs()
+        public void TestInvalidCedulas()
         {
-            var attr = new MSISDNAttribute();
+            var attr = new CedulaAttribute();
             Assert.IsFalse(attr.IsValid("foo"));
-            Assert.IsFalse(attr.IsValid("0211234567"));
-            Assert.IsFalse(attr.IsValid("021-123-4567"));
+            Assert.IsFalse(attr.IsValid("001-2222222-2"));
+            Assert.IsFalse(attr.IsValid("00122222222"));
             Assert.IsFalse(attr.IsValid(" "));
             Assert.IsFalse(attr.IsValid("\t"));
             Assert.IsFalse(attr.IsValid("\n"));

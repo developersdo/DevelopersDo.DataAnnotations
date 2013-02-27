@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.Text.RegularExpressions;
+using System.Globalization;
 
 namespace Mariuzzo.DO.DataAnnotations
 {
@@ -23,8 +24,13 @@ namespace Mariuzzo.DO.DataAnnotations
                 return true;
             }
 
-            Regex regex = new Regex(@"^[\dA-Fa-f]{8}$");
-            return regex.Matches(str).Count > 0;
+            if (str.Length != 8)
+            {
+                return false;
+            }
+
+            uint bbpin;
+            return UInt32.TryParse(str, NumberStyles.HexNumber, null, out bbpin);
         }
     }
 }

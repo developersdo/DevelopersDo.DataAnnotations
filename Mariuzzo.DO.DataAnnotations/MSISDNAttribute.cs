@@ -30,7 +30,7 @@ namespace Mariuzzo.DO.DataAnnotations
 
             if (String.IsNullOrWhiteSpace(str))
             {
-                return false;
+                return true;
             }
 
             Regex regex = new Regex(@"(\d{3}\-\d{3}\-\d{4})|(\d{10})");

@@ -38,6 +38,7 @@
   <ItemGroup>
     <Compile Include="BbPinAttribute.cs" />
     <Compile Include="CedulaAttribute.cs" />
+    <Compile Include="MSISDNAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

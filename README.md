@@ -11,26 +11,84 @@ To install [Mariuzzo.DO.DataAnnotations](http://nuget.org/packages/Mariuzzo.DO.D
     Install-Package Mariuzzo.DO.DataAnnotations
 
 Documentation
--------------
+=============
 
-### CedulaAttribute ###
+CedulaAttribute
+---------------
 
 Validate a Cédula.
 
-#### Example ####
+### Example ###
 
     [Cedula]
     public String Cedula { get; set; }
 
+### Test ###
 
-### BbPinAttribute ###
+| Input           | Output  |
+|-----------------|---------|
+| "001-0068331-7" | `true`  |
+| "00100683317"   | `true`  |
+| `null`          | `true`  |
+| ""              | `true`  |
+| "foo"           | `false` |
+| "001-2222222-2" | `false` |
+| "00122222222"   | `false` |
+| " "             | `false` |
+| "\t"            | `false` |
+| "\n"            | `false` |
+| "\n \t"         | `false` |
+
+BbPinAttribute
+--------------
 
 Validate a BlackBerry PIN. 
 
-#### Example ####
+### Example ###
 
     [BbPin]
     public String BbPin { get; set; }
+
+### Test ###
+
+| Input           | Output  |
+|-----------------|---------|
+| "223CEC0A"      | `true`  |
+| `null`          | `true`  |
+| ""              | `true`  |
+| "223CEC0"       | `false` |
+| "223CEC0AA"     | `false` |
+| " "             | `false` |
+| "\t"            | `false` |
+| "\n"            | `false` |
+| "\n \t"         | `false` |
+
+MSISDNAttribute
+---------------
+
+Validate a Dominican MSISDN. 
+
+### Example ###
+
+    [MSISDN]
+    public String BbPin { get; set; }
+
+### Test ###
+
+| Input           | Output  |
+|-----------------|---------|
+| "8091234567"    | `true`  |
+| "809-123-4567"  | `true`  |
+| `null`          | `true`  |
+| ""              | `true`  |
+| "foo"           | `false` |
+| "0211234567"    | `false` |
+| "021-123-4567"  | `false` |
+| " "             | `false` |
+| "\t"            | `false` |
+| "\n"            | `false` |
+| "\n \t"         | `false` |
+
 
 Do you want to contribute?
 --------------------------

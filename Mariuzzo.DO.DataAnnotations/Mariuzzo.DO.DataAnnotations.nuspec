@@ -12,8 +12,8 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
     <summary>This project provides common and useful validation attributes for Dominican Republic (DO). The set contains validation attributes for elements such as 'Cédula' and 'MSISDN'.</summary>
-    <releaseNotes>First release.</releaseNotes>
+    <releaseNotes>Improvements in validation attribute for Cedula and BlackBerry PIN. Also a new validation attribute was added for Dominican MSISDN.</releaseNotes>
     <copyright>Copyright © Rubens Mariuzzo 2013</copyright>
-    <tags>mariuzzo validation attribute dominican republic do sdq</tags>
+    <tags>mariuzzo validation attribute dominican republic do SDQ cedula MSISDN bbpin BlackBerry</tags>
   </metadata>
 </package>

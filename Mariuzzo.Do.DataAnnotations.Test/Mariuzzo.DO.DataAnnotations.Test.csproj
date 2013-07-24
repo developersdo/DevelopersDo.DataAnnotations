@@ -50,6 +50,7 @@
     <Compile Include="CedulaAttributeTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="MSISDNAttributeTest.cs" />
+    <Compile Include="RNCAttributeTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Mariuzzo.DO.DataAnnotations\Mariuzzo.DO.DataAnnotations.csproj">

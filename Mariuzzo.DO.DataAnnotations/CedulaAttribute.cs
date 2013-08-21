@@ -11,7 +11,9 @@ namespace Mariuzzo.DO.DataAnnotations
     [AttributeUsage(AttributeTargets.Property | AttributeTargets.Field, AllowMultiple = false)]
     public sealed class CedulaAttribute : ValidationAttribute
     {
+        
         private readonly IValidator _cedulaValidator = new CedulaValidator();
+
         /// <summary>
         /// Determines if a string value is a valid Cédula.
         /// </summary>

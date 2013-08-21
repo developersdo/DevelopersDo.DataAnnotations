@@ -13,8 +13,8 @@ namespace Mariuzzo.DO.Validator
                 return true;
             }
 
-            Regex regex = new Regex(@"(\d{3}\-\d{7}\-\d{1})|(\d{11})");
-            if (regex.Matches(str).Count == 0)
+            var regex = new Regex(@"^[0-9]{3}-?[0-9]{7}-?[0-9]{1}$");
+            if (!regex.IsMatch(str))
             {
                 return false;
             }
@@ -22,15 +22,20 @@ namespace Mariuzzo.DO.Validator
             str = Regex.Replace(str, @"[^\d]", String.Empty);
 
             // Do check digit.
+            return CheckDigit(str);
+        }
+
+        private bool CheckDigit(string str)
+        {
             int sum = 0;
             for (int i = 0; i < 10; ++i)
             {
-                int n = ((i + 1) % 2 != 0 ? 1 : 2) * int.Parse(str.Substring(i, 1));
+                int n = ((i + 1) % 2 != 0 ? 1 : 2) * (int)Char.GetNumericValue(str[i]);
                 sum += (n <= 9 ? n : n % 10 + 1);
             }
             int dig = ((10 - sum % 10) % 10);
 
-            return dig.Equals(int.Parse(str.Substring(10, 1)));
+            return dig == (int)Char.GetNumericValue(str[10]);
         }
     }
 }

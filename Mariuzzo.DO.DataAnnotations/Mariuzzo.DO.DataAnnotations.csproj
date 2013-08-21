@@ -40,6 +40,7 @@
     <Compile Include="CedulaAttribute.cs" />
     <Compile Include="MSISDNAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RNCAttribute.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Mariuzzo.DO.Validator\Mariuzzo.DO.Validator.csproj">

@@ -8,7 +8,9 @@ Installation
 
 To install [Mariuzzo.DO.DataAnnotations](http://nuget.org/packages/Mariuzzo.DO.DataAnnotations/), run the following command in the NuGet's [Package Manager Console](http://docs.nuget.org/docs/start-here/using-the-package-manager-console)
 
-    Install-Package Mariuzzo.DO.DataAnnotations
+```powershell
+Install-Package Mariuzzo.DO.DataAnnotations
+```
 
 Documentation
 =============
@@ -20,8 +22,10 @@ Validate a Cédula.
 
 ### Example ###
 
-    [Cedula]
-    public String Cedula { get; set; }
+```cs
+[Cedula]
+public String Cedula { get; set; }
+```
 
 ### Test ###
 
@@ -46,8 +50,10 @@ Validate a BlackBerry PIN.
 
 ### Example ###
 
-    [BbPin]
-    public String BbPin { get; set; }
+```cs
+[BbPin]
+public String BbPin { get; set; }
+```
 
 ### Test ###
 
@@ -70,8 +76,10 @@ Validate a Dominican MSISDN.
 
 ### Example ###
 
-    [MSISDN]
-    public String BbPin { get; set; }
+```cs
+[MSISDN]
+public String BbPin { get; set; }
+```
 
 ### Test ###
 

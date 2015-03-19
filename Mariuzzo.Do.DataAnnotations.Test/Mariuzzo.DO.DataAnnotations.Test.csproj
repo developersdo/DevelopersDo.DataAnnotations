@@ -9,8 +9,8 @@
     <ProjectGuid>{94A1DB79-EDF1-4A8E-90F1-CAD0BDB30E03}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Mariuzzo.Do.DataAnnotations.Test</RootNamespace>
-    <AssemblyName>Mariuzzo.Do.DataAnnotations.Test</AssemblyName>
+    <RootNamespace>DevelopersDo.DataAnnotations.Test</RootNamespace>
+    <AssemblyName>DevelopersDo.DataAnnotations.Test</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>

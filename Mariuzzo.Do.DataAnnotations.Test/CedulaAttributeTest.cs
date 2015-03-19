@@ -1,8 +1,7 @@
 ﻿using System;
-using Mariuzzo.DO.DataAnnotations;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Mariuzzo.Do.DataAnnotations.Test
+namespace DevelopersDo.DataAnnotations.Test
 {
     [TestClass]
     public class CedulaAttributeTest

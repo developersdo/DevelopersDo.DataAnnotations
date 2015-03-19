@@ -8,8 +8,8 @@
     <ProjectGuid>{EA62A23F-540A-4A08-BF65-2B0E7D9571E6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Mariuzzo.DO.DataAnnotations</RootNamespace>
-    <AssemblyName>Mariuzzo.DO.DataAnnotations</AssemblyName>
+    <RootNamespace>DevelopersDo.DataAnnotations</RootNamespace>
+    <AssemblyName>DevelopersDo.DataAnnotations</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

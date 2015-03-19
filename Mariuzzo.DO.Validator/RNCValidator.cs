@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
 
-namespace Mariuzzo.DO.Validator
+namespace DevelopersDo.Validator
 {
     public class RNCValidator : IValidator
     {

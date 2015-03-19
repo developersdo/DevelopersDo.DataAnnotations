@@ -1,4 +1,4 @@
-﻿namespace Mariuzzo.DO.Validator
+﻿namespace DevelopersDo.Validator
 {
     public interface IValidator
     {

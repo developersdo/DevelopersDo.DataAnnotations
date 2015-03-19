@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text.RegularExpressions;
 
-namespace Mariuzzo.DO.DataAnnotations
+namespace DevelopersDo.DataAnnotations
 {
     /// <summary>
     /// The <code>MSISDNAttribute</code> class.

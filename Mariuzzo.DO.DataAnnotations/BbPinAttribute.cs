@@ -1,9 +1,8 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
-using System.Text.RegularExpressions;
 using System.Globalization;
 
-namespace Mariuzzo.DO.DataAnnotations
+namespace DevelopersDo.DataAnnotations
 {
     /// <summary>
     /// The <code>BbPinAttribute</code> class.

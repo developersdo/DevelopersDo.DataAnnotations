@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 
-namespace Mariuzzo.DO.Validator
+namespace DevelopersDo.Validator
 {
     public class CedulaValidator: IValidator
     {

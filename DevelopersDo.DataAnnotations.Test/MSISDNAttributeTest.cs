@@ -1,32 +1,34 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using FluentAssertions;
+using NUnit.Framework;
 
 namespace DevelopersDo.DataAnnotations.Test
 {
-    [TestClass]
+    [TestFixture]
     public class MSISDNAttributeTest
     {
-        [TestMethod]
-        public void TestValidMSISDNs()
+        [Test]
+        [TestCase("8091234567")]
+        [TestCase("809-123-4567")]
+        [TestCase(null)]
+        [TestCase("")]
+        public void TestValidMSISDNs(string msisdn)
         {
             var attr = new MSISDNAttribute();
-            Assert.IsTrue(attr.IsValid("8091234567"));
-            Assert.IsTrue(attr.IsValid("809-123-4567"));
-            Assert.IsTrue(attr.IsValid(null));
-            Assert.IsTrue(attr.IsValid(String.Empty));
+            attr.IsValid(msisdn).Should().BeTrue();
         }
 
-        [TestMethod]
-        public void TestInvalidMSISDNs()
+        [Test]
+        [TestCase("foo")]
+        [TestCase("0211234567")]
+        [TestCase("021-123-4567")]
+        [TestCase(" ")]
+        [TestCase("\t")]
+        [TestCase("\n")]
+        [TestCase("\n \t")]
+        public void TestInvalidMSISDNs(string msisdn)
         {
             var attr = new MSISDNAttribute();
-            Assert.IsFalse(attr.IsValid("foo"));
-            Assert.IsFalse(attr.IsValid("0211234567"));
-            Assert.IsFalse(attr.IsValid("021-123-4567"));
-            Assert.IsFalse(attr.IsValid(" "));
-            Assert.IsFalse(attr.IsValid("\t"));
-            Assert.IsFalse(attr.IsValid("\n"));
-            Assert.IsFalse(attr.IsValid("\n \t"));
+            attr.IsValid(msisdn).Should().BeFalse();
         }
     }
 }

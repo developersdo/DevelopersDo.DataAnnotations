@@ -1,30 +1,32 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using FluentAssertions;
+using NUnit.Framework;
 
 namespace DevelopersDo.DataAnnotations.Test
 {
-    [TestClass]
+    [TestFixture]
     public class BbPinAttributesTest
     {
-        [TestMethod]
-        public void TestValidBbPins()
+        [Test]
+        [TestCase("223CEC0A")]
+        [TestCase(null)]
+        [TestCase("")]
+        public void TestValidBbPins(string bbPin)
         {
             var attr = new BbPinAttribute();
-            Assert.IsTrue(attr.IsValid("223CEC0A"));
-            Assert.IsTrue(attr.IsValid(null));
-            Assert.IsTrue(attr.IsValid(String.Empty));
+            attr.IsValid(bbPin).Should().BeTrue();
         }
 
-        [TestMethod]
-        public void TestInvalidBbPins()
+        [Test]
+        [TestCase("223CEC0")]
+        [TestCase("223CEC0AA")]
+        [TestCase(" ")]
+        [TestCase("\t")]
+        [TestCase("\n")]
+        [TestCase("\n \t")]
+        public void TestInvalidBbPins(string bbPin)
         {
             var attr = new BbPinAttribute();
-            Assert.IsFalse(attr.IsValid("223CEC0"));
-            Assert.IsFalse(attr.IsValid("223CEC0AA"));
-            Assert.IsFalse(attr.IsValid(" "));
-            Assert.IsFalse(attr.IsValid("\t"));
-            Assert.IsFalse(attr.IsValid("\n"));
-            Assert.IsFalse(attr.IsValid("\n \t"));
+            attr.IsValid(bbPin).Should().BeFalse();
         }
     }
 }

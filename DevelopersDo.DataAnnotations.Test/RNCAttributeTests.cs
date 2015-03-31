@@ -1,34 +1,34 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using FluentAssertions;
+using NUnit.Framework;
 
 namespace DevelopersDo.DataAnnotations.Test
 {
-    [TestClass]
+    [TestFixture]
     public class RNCAttributeTests
     {
-        [TestMethod]
-        public void TestValidRNCs()
+        [Test]
+        [TestCase("1-01-02779-7")]
+        [TestCase("101027797")]
+        [TestCase(null)]
+        [TestCase("")]
+        public void TestValidRNCs(string rnc)
         {
             var attr = new RNCAttribute();
-
-            Assert.IsTrue(attr.IsValid("1-01-02779-7"));
-            Assert.IsTrue(attr.IsValid("101027797"));
-            Assert.IsTrue(attr.IsValid(null));
-            Assert.IsTrue(attr.IsValid(String.Empty));
+            attr.IsValid(rnc).Should().BeTrue();
         }
 
-        [TestMethod]
-        public void TestInvalidRNCs()
+        [Test]
+        [TestCase("foo")]
+        [TestCase("1-01-02777-7")]
+        [TestCase("101027777")]
+        [TestCase(" ")]
+        [TestCase("\t")]
+        [TestCase("\n")]
+        [TestCase("\n \t")]
+        public void TestInvalidRNCs(string rnc)
         {
             var attr = new RNCAttribute();
-
-            Assert.IsFalse(attr.IsValid("foo"));
-            Assert.IsFalse(attr.IsValid("1-01-02777-7"));
-            Assert.IsFalse(attr.IsValid("101027777"));
-            Assert.IsFalse(attr.IsValid(" "));
-            Assert.IsFalse(attr.IsValid("\t"));
-            Assert.IsFalse(attr.IsValid("\n"));
-            Assert.IsFalse(attr.IsValid("\n \t"));
+            attr.IsValid(rnc).Should().BeFalse();
         }
     }
 }

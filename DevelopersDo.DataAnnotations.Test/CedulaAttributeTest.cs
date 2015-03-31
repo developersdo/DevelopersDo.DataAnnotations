@@ -1,32 +1,35 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using FluentAssertions;
+using NUnit.Framework;
 
 namespace DevelopersDo.DataAnnotations.Test
 {
-    [TestClass]
+    [TestFixture]
     public class CedulaAttributeTest
     {
-        [TestMethod]
-        public void TestValidCedulas()
+        [Test]
+        [TestCase("001-0068331-7")]
+        [TestCase("00100683317")]
+        [TestCase(null)]
+        [TestCase("")]
+        public void TestValidCedulas(string cedula)
         {
             var attr = new CedulaAttribute();
-            Assert.IsTrue(attr.IsValid("001-0068331-7"));
-            Assert.IsTrue(attr.IsValid("00100683317"));
-            Assert.IsTrue(attr.IsValid(null));
-            Assert.IsTrue(attr.IsValid(String.Empty));
+            attr.IsValid(cedula).Should().BeTrue();
         }
 
-        [TestMethod]
-        public void TestInvalidCedulas()
+        [Test]
+        [TestCase("foo")]
+        [TestCase("001-2222222-2")]
+        [TestCase("00122222222")]
+        [TestCase(" ")]
+        [TestCase("\t")]
+        [TestCase("\n")]
+        [TestCase("\n \t")]
+        public void TestInvalidCedulas(string cedula)
         {
             var attr = new CedulaAttribute();
-            Assert.IsFalse(attr.IsValid("foo"));
-            Assert.IsFalse(attr.IsValid("001-2222222-2"));
-            Assert.IsFalse(attr.IsValid("00122222222"));
-            Assert.IsFalse(attr.IsValid(" "));
-            Assert.IsFalse(attr.IsValid("\t"));
-            Assert.IsFalse(attr.IsValid("\n"));
-            Assert.IsFalse(attr.IsValid("\n \t"));
+            attr.IsValid(cedula).Should().BeFalse();
+            
         }
     }
 }

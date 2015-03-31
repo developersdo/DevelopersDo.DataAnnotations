@@ -1,4 +1,6 @@
-﻿using FluentAssertions;
+﻿using System.Collections.Generic;
+using DevelopersDo.Validator;
+using FluentAssertions;
 using NUnit.Framework;
 
 namespace DevelopersDo.DataAnnotations.Test
@@ -11,6 +13,7 @@ namespace DevelopersDo.DataAnnotations.Test
         [TestCase("00100683317")]
         [TestCase(null)]
         [TestCase("")]
+        [TestCaseSource("ValidCedulaExceptions")]
         public void TestValidCedulas(string cedula)
         {
             var attr = new CedulaAttribute();
@@ -30,6 +33,11 @@ namespace DevelopersDo.DataAnnotations.Test
             var attr = new CedulaAttribute();
             attr.IsValid(cedula).Should().BeFalse();
             
+        }
+
+        private IEnumerable<string> ValidCedulaExceptions()
+        {
+            return CedulaValidator.ValidExceptions;
         }
     }
 }

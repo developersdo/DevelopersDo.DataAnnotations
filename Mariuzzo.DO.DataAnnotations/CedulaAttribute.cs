@@ -1,6 +1,5 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
-using System.Text.RegularExpressions;
 using Mariuzzo.DO.Validator;
 
 namespace Mariuzzo.DO.DataAnnotations
@@ -13,7 +12,7 @@ namespace Mariuzzo.DO.DataAnnotations
     {
         
         private readonly IValidator _cedulaValidator = new CedulaValidator();
-
+     
         /// <summary>
         /// Determines if a string value is a valid Cédula.
         /// </summary>
@@ -23,5 +22,6 @@ namespace Mariuzzo.DO.DataAnnotations
         {
             return _cedulaValidator.IsValid(value);
         }
+    
     }
 }

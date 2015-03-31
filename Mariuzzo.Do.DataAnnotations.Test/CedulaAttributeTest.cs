@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Linq;
 using Mariuzzo.DO.DataAnnotations;
+using Mariuzzo.DO.Validator;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Mariuzzo.Do.DataAnnotations.Test
@@ -28,6 +30,14 @@ namespace Mariuzzo.Do.DataAnnotations.Test
             Assert.IsFalse(attr.IsValid("\t"));
             Assert.IsFalse(attr.IsValid("\n"));
             Assert.IsFalse(attr.IsValid("\n \t"));
+        }
+
+        [TestMethod]
+        public void TestShouldBeValidForCedulasExceptions()
+        {
+            var attr = new CedulaAttribute();
+            var cedulasExceptions = CedulaValidator.ValidExceptions;
+            Assert.IsFalse(cedulasExceptions.Any(c => !attr.IsValid(c)));
         }
     }
 }

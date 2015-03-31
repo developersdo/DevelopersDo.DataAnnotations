@@ -1,4 +1,4 @@
-Mariuzzo.DO.DataAnnotations
+DevelopersDo.DataAnnotations
 ===========================
 
 > Provides common and useful validation attributes for Dominican Republic (DO).
@@ -6,10 +6,10 @@ Mariuzzo.DO.DataAnnotations
 Installation
 ------------
 
-To install [Mariuzzo.DO.DataAnnotations](http://nuget.org/packages/Mariuzzo.DO.DataAnnotations/), run the following command in the NuGet's [Package Manager Console](http://docs.nuget.org/docs/start-here/using-the-package-manager-console)
+To install [DevelopersDo.DataAnnotations](http://nuget.org/packages/DevelopersDo.DataAnnotations/), run the following command in the NuGet's [Package Manager Console](http://docs.nuget.org/docs/start-here/using-the-package-manager-console)
 
 ```powershell
-Install-Package Mariuzzo.DO.DataAnnotations
+Install-Package DevelopersDo.DataAnnotations
 ```
 
 Documentation
@@ -72,13 +72,13 @@ public String BbPin { get; set; }
 MSISDNAttribute
 ---------------
 
-Validate a Dominican MSISDN. 
+Validate a Dominican MSISDN.
 
 ### Example ###
 
 ```cs
 [MSISDN]
-public String BbPin { get; set; }
+public String PhoneNumber { get; set; }
 ```
 
 ### Test ###
@@ -101,6 +101,6 @@ public String BbPin { get; set; }
 Do you want to contribute?
 --------------------------
 
-As most projects nowadays, just fork this repository, put your hands in the code, then send me a pull request.
+As most projects nowadays, just fork this repository, get your hands on the code, then send me a pull request.
 
-Do you prefer to talk? [Send me a message](https://github.com/rmariuzzo).
+Do you prefer to talk? [Send us a message](https://github.com/developersdo).

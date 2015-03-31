@@ -1,12 +1,12 @@
 ﻿using System.Reflection;
 using System.Runtime.InteropServices;
 
-[assembly: AssemblyTitle("Mariuzzo.DO.DataAnnotations.Test")]
-[assembly: AssemblyDescription("Unit tests for Mariuzzo.DO.DataAnnotations.")]
+[assembly: AssemblyTitle("DevelopersDo.DataAnnotations.Test")]
+[assembly: AssemblyDescription("Unit tests for DevelopersDo.DataAnnotations.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Mariuzzo")]
-[assembly: AssemblyProduct("Mariuzzo.DO.DataAnnotations.Test")]
-[assembly: AssemblyCopyright("Copyright © Rubens Mariuzzo 2013")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("DevelopersDo.DataAnnotations.Test")]
+[assembly: AssemblyCopyright("Copyright © 2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]

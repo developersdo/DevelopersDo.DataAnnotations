@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Mariuzzo.DO.DataAnnotations.Test
+namespace DevelopersDo.DataAnnotations.Test
 {
     [TestClass]
     public class MSISDNAttributeTest

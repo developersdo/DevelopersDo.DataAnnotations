@@ -3,15 +3,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>8.0.30703</ProductVersion>
+    <ProductVersion>
+    </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{EA62A23F-540A-4A08-BF65-2B0E7D9571E6}</ProjectGuid>
+    <ProjectGuid>{94A1DB79-EDF1-4A8E-90F1-CAD0BDB30E03}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Mariuzzo.DO.DataAnnotations</RootNamespace>
-    <AssemblyName>Mariuzzo.DO.DataAnnotations</AssemblyName>
+    <RootNamespace>DevelopersDo.DataAnnotations.Test</RootNamespace>
+    <AssemblyName>DevelopersDo.DataAnnotations.Test</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -31,24 +33,32 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Core" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BbPinAttribute.cs" />
-    <Compile Include="CedulaAttribute.cs" />
-    <Compile Include="MSISDNAttribute.cs" />
+    <CodeAnalysisDependentAssemblyPaths Condition=" '$(VS100COMNTOOLS)' != '' " Include="$(VS100COMNTOOLS)..\IDE\PrivateAssemblies">
+      <Visible>False</Visible>
+    </CodeAnalysisDependentAssemblyPaths>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BbPinAttributesTest.cs" />
+    <Compile Include="CedulaAttributeTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RNCAttribute.cs" />
+    <Compile Include="MSISDNAttributeTest.cs" />
+    <Compile Include="RNCAttributeTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Mariuzzo.DO.Validator\Mariuzzo.DO.Validator.csproj">
-      <Project>{c4796665-909f-410e-8857-42d68f0dd57d}</Project>
-      <Name>Mariuzzo.DO.Validator</Name>
+    <ProjectReference Include="..\DevelopersDo.DataAnnotations\DevelopersDo.DataAnnotations.csproj">
+      <Project>{EA62A23F-540A-4A08-BF65-2B0E7D9571E6}</Project>
+      <Name>DevelopersDo.DataAnnotations</Name>
     </ProjectReference>
   </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

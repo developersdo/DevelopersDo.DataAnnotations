@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Mariuzzo.DO.DataAnnotations;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Mariuzzo.Do.DataAnnotations.Test
+namespace DevelopersDo.DataAnnotations.Test
 {
     [TestClass]
     public class RNCAttributeTests

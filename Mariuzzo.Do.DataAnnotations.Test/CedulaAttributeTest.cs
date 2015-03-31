@@ -33,11 +33,11 @@ namespace Mariuzzo.Do.DataAnnotations.Test
         }
 
         [TestMethod]
-        public void TestInvalidCedulaWhenIgnoreExceptionsIsFalse()
+        public void TestShouldBeValidForCedulasExceptions()
         {
             var attr = new CedulaAttribute();
             var cedulasExceptions = CedulaValidator.ValidExceptions;
-            cedulasExceptions.ToList().ForEach(c => Assert.IsTrue(attr.IsValid(c)));
+            Assert.IsFalse(cedulasExceptions.Any(c => !attr.IsValid(c)));
         }
     }
 }

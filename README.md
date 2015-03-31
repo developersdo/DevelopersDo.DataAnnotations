@@ -1,14 +1,16 @@
-Mariuzzo.DO.DataAnnotations
+DevelopersDo.DataAnnotations
 ===========================
 
-Provides common and useful validation attributes for Dominican Republic (DO).
+> Provides common and useful validation attributes for Dominican Republic (DO).
 
 Installation
 ------------
 
-To install [Mariuzzo.DO.DataAnnotations](http://nuget.org/packages/Mariuzzo.DO.DataAnnotations/), run the following command in the NuGet's [Package Manager Console](http://docs.nuget.org/docs/start-here/using-the-package-manager-console)
+To install [DevelopersDo.DataAnnotations](http://nuget.org/packages/DevelopersDo.DataAnnotations/), run the following command in the NuGet's [Package Manager Console](http://docs.nuget.org/docs/start-here/using-the-package-manager-console)
 
-    Install-Package Mariuzzo.DO.DataAnnotations
+```powershell
+Install-Package DevelopersDo.DataAnnotations
+```
 
 Documentation
 =============
@@ -20,8 +22,10 @@ Validate a Cédula.
 
 ### Example ###
 
-    [Cedula]
-    public String Cedula { get; set; }
+```cs
+[Cedula]
+public String Cedula { get; set; }
+```
 
 ### Test ###
 
@@ -46,8 +50,10 @@ Validate a BlackBerry PIN.
 
 ### Example ###
 
-    [BbPin]
-    public String BbPin { get; set; }
+```cs
+[BbPin]
+public String BbPin { get; set; }
+```
 
 ### Test ###
 
@@ -66,12 +72,14 @@ Validate a BlackBerry PIN.
 MSISDNAttribute
 ---------------
 
-Validate a Dominican MSISDN. 
+Validate a Dominican MSISDN.
 
 ### Example ###
 
-    [MSISDN]
-    public String BbPin { get; set; }
+```cs
+[MSISDN]
+public String PhoneNumber { get; set; }
+```
 
 ### Test ###
 
@@ -93,6 +101,6 @@ Validate a Dominican MSISDN.
 Do you want to contribute?
 --------------------------
 
-As most projects nowadays, just fork this repository, put your hands in the code, then send me a pull request.
+As most projects nowadays, just fork this repository, get your hands on the code, then send me a pull request.
 
-Do you prefer to talk? [Send me a message](https://github.com/rmariuzzo).
+Do you prefer to talk? [Send us a message](https://github.com/developersdo).

@@ -1,8 +1,8 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
-using Mariuzzo.DO.Validator;
+using DevelopersDo.Validator;
 
-namespace Mariuzzo.DO.DataAnnotations
+namespace DevelopersDo.DataAnnotations
 {
     /// <summary>
     /// The <code>CedulaAttribute</code> class.

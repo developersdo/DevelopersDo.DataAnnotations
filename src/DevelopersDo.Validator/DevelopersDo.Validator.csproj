@@ -7,8 +7,8 @@
     <ProjectGuid>{C4796665-909F-410E-8857-42D68F0DD57D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Mariuzzo.DO.Validator</RootNamespace>
-    <AssemblyName>Mariuzzo.DO.Validator</AssemblyName>
+    <RootNamespace>DevelopersDo.Validator</RootNamespace>
+    <AssemblyName>DevelopersDo.Validator</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />

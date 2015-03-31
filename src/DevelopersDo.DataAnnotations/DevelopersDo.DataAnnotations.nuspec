@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <licenseUrl>http://opensource.org/licenses/MIT</licenseUrl>
+    <projectUrl>https://github.com/developersdo/DevelopersDo.DataAnnotations</projectUrl>
+    <iconUrl>https://avatars2.githubusercontent.com/u/3752839?s=256</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <summary>This project provides common and useful validation attributes for Dominican Republic (DO). The set contains validation attributes for elements such as 'Cédula' and 'MSISDN'.</summary>
+    <releaseNotes>Rebranding from Mariuzzo.DO to DevelopersDo</releaseNotes>
+    <copyright>Copyright © Developers Dominicanos 2015</copyright>
+    <tags>validation attribute dominican republic do SDQ cedula MSISDN bbpin BlackBerry</tags>
+  </metadata>
+</package>

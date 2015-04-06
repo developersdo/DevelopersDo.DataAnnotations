@@ -10,8 +10,12 @@ namespace DevelopersDo.DataAnnotations
     [AttributeUsage(AttributeTargets.Property | AttributeTargets.Field, AllowMultiple = false)]
     public sealed class RNCAttribute : ValidationAttribute
     {
-        private readonly IValidator _rncValidator = new RNCValidator();
-
+        private readonly IValidator _rncValidator;
+        public RNCAttribute()
+        {
+            _rncValidator = new RNCValidator();
+        }
+        
         /// <summary>
         /// Determines if a string value is a valid RNC.
         /// </summary>

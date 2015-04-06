@@ -11,7 +11,8 @@ namespace DevelopersDo.DataAnnotations
     [AttributeUsage(AttributeTargets.Property | AttributeTargets.Field, AllowMultiple = false)]
     public sealed class MSISDNAttribute : ValidationAttribute
     {
-        private readonly String[] _defaultPrefixes = { "809", "829", "849" };
+        private static readonly String[] DefaultPrefixes = { "809", "829", "849" };
+        private static readonly Regex MSISDNRegex = new Regex(@"(\d{3}\-\d{3}\-\d{4})|(\d{10})", RegexOptions.Compiled);
 
         public String[] Prefixes { get; set; }
 
@@ -23,19 +24,15 @@ namespace DevelopersDo.DataAnnotations
         public override bool IsValid(object value)
         {
             var str = value as String;
+            
             if (String.IsNullOrEmpty(str))
-            {
                 return true;
-            }
 
-            Regex regex = new Regex(@"(\d{3}\-\d{3}\-\d{4})|(\d{10})");
-            if (regex.Matches(str).Count == 0)
-            {
+            if (MSISDNRegex.Matches(str).Count == 0)
                 return false;
-            }
 
             str = new string(str.Where(Char.IsDigit).ToArray());
-            return (Prefixes ?? _defaultPrefixes).Any(p => str.StartsWith(p));
+            return (Prefixes ?? DefaultPrefixes).Any(p => str.StartsWith(p));
         }
     }
 }

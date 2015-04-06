@@ -5,43 +5,48 @@ namespace DevelopersDo.Validator
 {
     public class RNCValidator : IValidator
     {
+        private static readonly Regex RncRegex = new Regex(@"^(1|4|5)-?[0-9]{2}-?[0-9]{5}-?[0-9]{1}$", RegexOptions.Compiled);
+        private static readonly Regex NonDigitRegex = new Regex(@"[^\d]", RegexOptions.Compiled);
+        private static readonly int[] BaseDigits = { 7, 9, 8, 6, 5, 4, 3, 2 };
+
         public bool IsValid(object value)
         {
             var str = value as String;
+            
             if (String.IsNullOrEmpty(str))
-            {
                 return true;
-            }
 
-            var regex = new Regex(@"^(1|4|5)-?[0-9]{2}-?[0-9]{5}-?[0-9]{1}$");
-            if (!regex.IsMatch(str))
-            {
+            if (!RncRegex.IsMatch(str))
                 return false;
-            }
 
-            str = Regex.Replace(str, @"[^\d]", String.Empty);
+            str = NonDigitRegex.Replace(str, String.Empty);
 
-            // Do check digit.
+            // Do check digit algorithm.
             return CheckDigit(str);
         }
 
-        private bool CheckDigit(string str)
+        private static bool CheckDigit(string str)
         {
-            var baseDigs = new int[] { 7, 9, 8, 6, 5, 4, 3, 2 };
-            int result = 0;
-            int digit = 0;
+            var result = 0;
+            int digit;
 
-            for (int i = 0; i < 8; i++)
-                result += baseDigs[i] * (int)Char.GetNumericValue(str[i]);
+            for (var i = 0; i < 8; i++)
+                result += BaseDigits[i] * (int)Char.GetNumericValue(str[i]);
 
             result = result % 11;
 
-            if (result == 0)
-                digit = 2;
-            else if (result == 1)
-                digit = 1;
-            else
-                digit = 11 - result;
+            switch (result)
+            {
+                case 0:
+                    digit = 2;
+                    break;
+                case 1:
+                    digit = 1;
+                    break;
+                default:
+                    digit = 11 - result;
+                    break;
+            }
 
             return digit == (int)Char.GetNumericValue(str[8]);
         }

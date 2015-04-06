@@ -18,15 +18,12 @@ namespace DevelopersDo.DataAnnotations
         public override bool IsValid(object value)
         {
             var str = value as string;
+
             if (String.IsNullOrEmpty(str))
-            {
                 return true;
-            }
 
             if (str.Length != 8)
-            {
                 return false;
-            }
 
             uint bbpin;
             return UInt32.TryParse(str, NumberStyles.HexNumber, null, out bbpin);

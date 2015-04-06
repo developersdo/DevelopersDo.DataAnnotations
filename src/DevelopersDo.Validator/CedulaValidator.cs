@@ -6,35 +6,34 @@ namespace DevelopersDo.Validator
 {
     public class CedulaValidator: IValidator
     {
+        private static readonly Regex CedulaRegex = new Regex(@"^[0-9]{3}-?[0-9]{7}-?[0-9]{1}$", RegexOptions.Compiled);
+        private static readonly Regex NonDigitRegex = new Regex(@"[^\d]", RegexOptions.Compiled);
+
         public bool IsValid(object value)
         {
             var str = value as String;
+
             if (String.IsNullOrEmpty(str) || ValidExceptions.Contains(str))
-            {
                 return true;
-            }
 
-            var regex = new Regex(@"^[0-9]{3}-?[0-9]{7}-?[0-9]{1}$");
-            if (!regex.IsMatch(str))
-            {
+            if (!CedulaRegex.IsMatch(str))
                 return false;
-            }
 
-            str = Regex.Replace(str, @"[^\d]", String.Empty);
+            str = NonDigitRegex.Replace(str, String.Empty);
 
             // Do check digit.
             return CheckDigit(str);
         }
 
-        private bool CheckDigit(string str)
+        private static bool CheckDigit(string str)
         {
-            int sum = 0;
-            for (int i = 0; i < 10; ++i)
+            var sum = 0;
+            for (var i = 0; i < 10; ++i)
             {
-                int n = ((i + 1) % 2 != 0 ? 1 : 2) * (int)Char.GetNumericValue(str[i]);
+                var n = ((i + 1) % 2 != 0 ? 1 : 2) * (int)Char.GetNumericValue(str[i]);
                 sum += (n <= 9 ? n : n % 10 + 1);
             }
-            int dig = ((10 - sum % 10) % 10);
+            var dig = ((10 - sum % 10) % 10);
 
             return dig == (int)Char.GetNumericValue(str[10]);
         }
